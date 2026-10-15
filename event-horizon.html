@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>EVENT HORIZON — Beyond the Observable Universe</title>
+<style>
+:root{--bg:#03040a;--tx:#e8ecf7;--mu:#9aa4c0;--gl:rgba(255,255,255,.05);--bd:rgba(150,170,255,.18);--or:#ff8a3d;--cy:#5fd6ff;--vi:#9b7bff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#03040a}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 Georgia,'Times New Roman',serif;overflow-x:hidden}
+h1,h2,h3,nav,button,label,.k{font-family:'Helvetica Neue',Arial,sans-serif}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;gap:18px;padding:12px 18px;padding-top:calc(12px + env(safe-area-inset-top,0px));background:rgba(3,4,10,.7);backdrop-filter:blur(12px);overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--bd);font-size:12px;letter-spacing:.18em}
+nav b{color:var(--or)}nav a{color:var(--mu);text-decoration:none}nav a:hover{color:#fff}
+#hero{position:relative;height:100svh;min-height:560px}
+#bh{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ht{position:absolute;inset:0;padding:84px 20px calc(24px + env(safe-area-inset-bottom,0px));text-align:center;display:grid;grid-template-rows:auto 1fr auto;justify-items:center;pointer-events:none}.ht>*{pointer-events:auto}.cta{align-self:center;margin-top:20svh;display:flex;flex-direction:column;align-items:center;gap:4px}@media(min-width:600px){.cta{flex-direction:row}}.ht h1,.ht p{text-shadow:0 2px 18px #000}
+.ht h1{margin:0 auto;max-width:900px;font-size:clamp(24px,5vw,54px);font-weight:300;letter-spacing:.12em}
+.ht p{max-width:620px;margin:10px auto 18px;color:var(--mu);font-size:clamp(14px,2vw,17px)}
+.btn{display:inline-block;margin:4px;padding:12px 22px;border:1px solid var(--or);color:#fff;background:rgba(255,138,61,.12);text-decoration:none;font-size:12px;letter-spacing:.2em;border-radius:2px;cursor:pointer}
+.btn.g{border-color:var(--bd);background:var(--gl)}.btn:hover{background:rgba(255,138,61,.3)}
+.sim{position:absolute;top:70px;right:14px;font:11px Arial;color:var(--mu);letter-spacing:.1em}
+section{padding:80px 20px;max-width:1150px;margin:auto}
+h2{font-weight:300;font-size:clamp(26px,4vw,42px);letter-spacing:.08em;margin:0 0 6px}
+.k{color:var(--cy);font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.lead{color:var(--mu);max-width:700px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:26px}
+.card{background:var(--gl);border:1px solid var(--bd);border-radius:6px;overflow:hidden;backdrop-filter:blur(8px)}
+.card .im{height:190px;background:#0a0d1c center/cover;position:relative;display:flex;align-items:center;justify-content:center;color:var(--mu);font:12px Arial;text-align:center;padding:10px}
+.card .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card .b{padding:14px 16px}.card h3{margin:0 0 4px;font-weight:400;font-size:18px}
+.card small{color:var(--mu);display:block}.more{display:none;margin-top:8px;font-size:14px;color:#cdd5ee}.card.open .more{display:block}
+.card button{margin-top:10px}
+button{background:var(--gl);color:var(--tx);border:1px solid var(--bd);padding:8px 14px;border-radius:2px;cursor:pointer;font-size:12px;letter-spacing:.1em}
+button:hover,button.on{border-color:var(--or);background:rgba(255,138,61,.15)}
+input,select{background:#0a0d1c;color:var(--tx);border:1px solid var(--bd);padding:10px;border-radius:2px;font-size:16px;width:100%;max-width:340px}
+.lab{display:grid;gap:20px;grid-template-columns:1fr;margin-top:24px}@media(min-width:800px){.lab{grid-template-columns:1.3fr 1fr}}
+.lab canvas{width:100%;height:340px;background:#000;border:1px solid var(--bd);border-radius:6px;touch-action:none}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.out{padding:14px;border:1px solid var(--bd);border-radius:6px;background:var(--gl);margin-top:12px}
+.bar{height:8px;background:linear-gradient(90deg,var(--vi),var(--or));border-radius:4px;margin:4px 0 10px}
+footer{padding:40px 20px;text-align:center;color:var(--mu);font:12px Arial;border-top:1px solid var(--bd)}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}.opt.ok{border-color:#4ade80}.opt.no{border-color:#f87171}
+</style></head><body>
+<nav><b>EVENT HORIZON</b><a href="#galaxies">GALAXIES</a><a href="#lab">BLACK HOLE LAB</a><a href="#deep">DEEP SPACE</a><a href="#tools">TOOLS</a><a href="#quiz">QUIZ</a></nav>
+<header id="hero"><canvas id="bh" aria-label="Simulated rotating black hole with accretion disk"></canvas><div class="sim">SIMULATION · REAL-TIME RAY-TRACED (SCHWARZSCHILD)</div>
+<div class="ht"><h1>THE UNIVERSE IS NOT WHAT IT SEEMS.</h1><div class="cta"><a class="btn" href="#galaxies">ENTER THE COSMOS</a><a class="btn g" href="#lab" style="background:rgba(3,4,10,.6)">EXPLORE THE SCIENCE</a></div><p>Journey beyond the event horizon. Explore galaxies, black holes, nebulae and the physics of reality.</p></div></header>
+
+<section id="galaxies"><div class="k">Galaxy Explorer</div><h2>Islands of stars</h2><p class="lead">Seven families of galaxies, with real examples. Tap "Discover more" on any card.</p><div class="grid" id="gg"></div></section>
+
+<section id="lab"><div class="k">Black Hole Lab</div><h2>Where spacetime breaks</h2><p class="lead">Drag the view to tilt the disk. Tap a concept to highlight it.</p>
+<div class="lab"><div><canvas id="bh2"></canvas><div class="row" id="chips"></div></div><div class="out" id="bhinfo"></div></div></section>
+
+<section id="deep"><div class="k">Deep Space Explorer</div><h2>Ten journeys</h2><div class="grid" id="dg"></div></section>
+
+<section id="tools"><div class="k">Interactive Science</div><h2>Instruments</h2>
+<h3>Planet selector</h3><div class="row" id="pl"></div><div class="out" id="pinfo"></div>
+<h3 style="margin-top:36px">Gravity &amp; escape velocity</h3><div class="row"><select id="gb"></select></div><div class="out" id="gout"></div>
+<h3 style="margin-top:36px">Light-year calculator</h3><div class="row"><input id="ly" type="number" min="0" value="4.24" step="any" aria-label="Light-years"></div><div class="out" id="lyo"></div>
+<h3 style="margin-top:36px">Cosmic distance comparison (log scale)</h3><div class="out" id="dist"></div>
+<h3 style="margin-top:36px">Stellar evolution timeline</h3><div class="row" id="tl"></div><div class="out" id="tli"></div>
+<h3 style="margin-top:36px">Space-object search</h3><input id="q" placeholder="Search: nebula, pulsar, Orion…" aria-label="Search"><div class="grid" id="sr"></div></section>
+
+<section id="quiz"><div class="k">Quiz</div><h2>Test your cosmos</h2><div class="out" id="qz"></div></section>
+<footer>Hero and Lab are original simulations, not photographs. Some deep-space tiles are artist's impressions or simulations. Image sources: Wikimedia Commons (NASA/ESA/Hubble public-domain files). Credits shown on each card. Explore more: images.nasa.gov · esahubble.org · science.nasa.gov</footer>
+
+<script>
+const $=s=>document.querySelector(s),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* ---------- Black hole renderer ---------- */
+function BH(cv,opt){const c=cv.getContext('2d');let W,H,R,cx,cy,tilt=opt.tilt,t=0,hl=0;
+ const st=[...Array(260)].map(()=>({x:Math.random(),y:Math.random(),s:Math.random()*1.4+.2,a:Math.random()*.7+.2,p:Math.random()*6}));
+ const P=[...Array(opt.n)].map(()=>{const u=Math.random();return{r:1.5+u*u*3.6,th:Math.random()*6.28,j:Math.random()*.5-.25}});
+ function rs(){const d=Math.min(devicePixelRatio||1,2),b=cv.getBoundingClientRect();W=cv.width=b.width*d;H=cv.height=b.height*d;R=Math.min(W,H*(opt.hero?1.05:1.3))*opt.rf;cx=W/2;cy=H*opt.cy}
+ function col(r,dop){const k=(r-1.5)/3.6,L=Math.min(1,(1-k*.6)*dop);
+  if(k<.2)return`rgba(255,${230+k*5|0},${200+k*100|0},${L})`;if(k<.55)return`rgba(255,${150+(1-k)*60|0},${60+k*40|0},${L*.9})`;return`rgba(${150+k*60|0},${100+k*30|0},255,${L*.7})`}
+ function draw(){t+=RM?0:.0016;c.fillStyle='#03040a';c.fillRect(0,0,W,H);
+  const g=c.createRadialGradient(cx,cy,R,cx,cy,R*6);g.addColorStop(0,'rgba(255,120,40,.22)');g.addColorStop(.5,'rgba(110,70,200,.08)');g.addColorStop(1,'transparent');c.fillStyle=g;c.fillRect(0,0,W,H);
+  st.forEach(s=>{c.globalAlpha=s.a*(RM?1:.75+.25*Math.sin(t*40+s.p));c.fillStyle='#cfe0ff';c.fillRect(s.x*W-(cx-W/2)*0,s.y*H,s.s*devicePixelRatio,s.s*devicePixelRatio)});c.globalAlpha=1;
+  c.globalCompositeOperation='lighter';const ts=Math.sin(tilt),tc=Math.cos(tilt),pz=(hl?1.5:1);
+  const dot=(x,y,r,s,a)=>{c.fillStyle=a;c.beginPath();c.arc(x,y,s,0,6.283);c.fill()};
+  P.forEach(p=>{const w=t*(1/Math.pow(p.r,1.5))*9*(opt.hero?1:1.3);const th=p.th+w,r=p.r*R,cs=Math.cos(th),sn=Math.sin(th),dop=.55+.55*(-cs*.9)*(tilt>0?1:1)+.2,sz=Math.max(1,R*.012*(hl&&hl!=3?1:1));
+   const back=sn<0;let x=cx+r*cs,y=cy+r*sn*ts+p.j*R*.1;
+   if(!back||ts<.12||true){if(!back||(Math.abs(cs)*r>R*1.05)||(sn*ts*r>R*.0)){c.globalAlpha=1;
+     if(back&&Math.abs(cs)*p.r<1.0){}else dot(x,y,0,sz,col(p.r,dop))}}
+   if(back){const ly=cy-(R*1.05+(p.r-1.5)*R*.28)*Math.pow(-sn,.55)*tc*1.0;const lx=cx+r*cs*.92;dot(lx,ly,0,sz*.9,col(p.r,dop*.8))}
+   else if(ts>.25){const ly=cy+(R*1.02+(p.r-1.5)*R*.12)*Math.pow(sn,.5)*tc*.55*(1);if(p.r<2.6&&Math.abs(cs)<.9)dot(cx+r*cs*.5,ly,0,sz*.6,col(p.r,dop*.5))}});
+  c.globalCompositeOperation='source-over';
+  const ph=c.createRadialGradient(cx,cy,R*.96,cx,cy,R*1.22);ph.addColorStop(0,'rgba(255,210,160,.0)');ph.addColorStop(.35,`rgba(255,220,180,${hl==3?.95:.55})`);ph.addColorStop(1,'transparent');c.fillStyle=ph;c.beginPath();c.arc(cx,cy,R*1.22,0,6.283);c.fill();
+  c.fillStyle='#000';c.beginPath();c.arc(cx,cy,R*.96,0,6.283);c.fill();
+  if(hl==1){c.strokeStyle='#5fd6ff';c.lineWidth=2;c.setLineDash([6,6]);c.beginPath();c.arc(cx,cy,R*.96,0,6.283);c.stroke();c.setLineDash([])}
+  if(!opt.hero&&hl){c.fillStyle='#fff';c.font=`${12*devicePixelRatio}px Arial`;c.fillText(['','EVENT HORIZON','ACCRETION DISK','PHOTON RING','LENSED IMAGE OF FAR-SIDE DISK'][hl]||'',12,22*devicePixelRatio)}
+  if(!RM)requestAnimationFrame(draw)}
+ let drag=0;if(opt.drag){cv.onpointerdown=e=>{drag=1;cv.setPointerCapture(e.pointerId)};cv.onpointerup=()=>drag=0;cv.onpointermove=e=>{if(drag){tilt=Math.max(.05,Math.min(1.45,tilt-e.movementY*.01));if(RM)draw()}}}
+ addEventListener('resize',()=>{rs();if(RM)draw()});rs();draw();return{hl:v=>{hl=v;if(RM)draw()}}}
+const FS=String.raw`precision highp float;uniform vec2 R;uniform float T,E,Z;
+float h21(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float n2(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h21(i),h21(i+vec2(1,0)),f.x),mix(h21(i+vec2(0,1)),h21(i+vec2(1,1)),f.x),f.y);}
+float fbm(vec2 p){float a=.5,s=0.;for(int i=0;i<4;i++){s+=a*n2(p);p*=2.03;a*=.5;}return s;}
+vec3 stars(vec3 d){vec2 u=vec2(atan(d.z,d.x)*.159155+.5,asin(clamp(d.y,-1.,1.))*.3183+.5);vec3 c=vec3(0);
+for(int i=0;i<3;i++){float s=1400.+float(i)*900.;vec2 g=u*vec2(2.,1.)*s;vec2 id=floor(g),f=fract(g)-.5;float h=h21(id+float(i)*17.3);vec2 j=vec2(h21(id+3.1),h21(id+7.7))-.5;float dd=length(f-j*.5);
+float b=step(.985,h)*smoothstep(.4,0.,dd)*pow(h21(id+5.),2.5)*4.;c+=mix(vec3(.7,.8,1.),vec3(1.,.8,.6),h21(id+1.7))*b;}
+float band=exp(-pow(d.y*2.4+d.x*.5,2.)*3.);c+=vec3(.55,.5,.7)*fbm(u*vec2(30.,12.))*band*.16+vec3(.12,.07,.22)*fbm(u*7.)*.12;return c;}
+vec3 bb(float t){t=clamp(t,0.,2.5);return mix(vec3(1.,.25,.04),vec3(1.,.8,.5),smoothstep(.2,1.,t))+vec3(-.15,0.,.5)*smoothstep(1.1,2.,t);}
+void main(){vec2 uv=(gl_FragCoord.xy-.5*R)/min(R.x,R.y);
+vec3 ro=Z*vec3(cos(E),sin(E),0.);vec3 fw=-normalize(ro),rt=normalize(cross(fw,vec3(0,1,0))),up=cross(rt,fw);
+vec3 d=normalize(fw*1.6+rt*uv.x+up*uv.y),p=ro;vec3 hh=cross(p,d);float h2=dot(hh,hh);
+vec3 col=vec3(0);float tr=1.;
+for(int i=0;i<150;i++){float r=length(p);if(r<2.02){tr=0.;break;}if(r>70.&&dot(p,d)>0.)break;
+float dt=clamp(.07*(r-1.5),.03,2.);d=normalize(d-1.5*h2*p/(r*r*r*r*r)*dt);vec3 pn=p+d*dt;
+col+=tr*vec3(1.,.55,.25)*.006*exp(-pow((r-3.1)*.9,2.))*dt*8.;
+if(p.y*pn.y<0.){float k=p.y/(p.y-pn.y);vec3 q=mix(p,pn,k);float rr=length(q.xz);
+if(rr>2.9&&rr<15.){float ph=atan(q.z,q.x);float om=pow(rr,-1.5);float a2=ph-om*T*.55;vec2 cs=vec2(cos(a2),sin(a2));
+float n=fbm(cs*rr*1.1+rr*.5)*.7+fbm(cs*rr*3.3)*.5;
+float bt=sqrt(1./(rr-1.2));bt=min(bt,.75);vec3 v=normalize(vec3(-q.z,0.,q.x))*bt;float g=sqrt(1.-bt*bt)/(1.-dot(v,d));
+float em=pow(3./rr,2.1)*smoothstep(2.9,3.7,rr)*(1.-smoothstep(9.,15.,rr));
+float I=em*(.35+1.5*n)*pow(g,3.)*1.7;float temp=pow(rr/3.,-.75)*g*1.05;
+col+=tr*bb(temp)*I;tr*=.5;}}
+p=pn;}
+col+=tr*stars(d)*1.2;
+col=1.-exp(-col*1.3);col=pow(col,vec3(.92));col*=1.-.4*dot(uv,uv);
+col+=(h21(gl_FragCoord.xy+T)-.5)*.012;gl_FragColor=vec4(col,1.);}`,VS='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+function GL(cv,o){let gl;try{gl=cv.getContext('webgl',{antialias:false})}catch(x){}if(!gl)return null;
+const mk=(t,s)=>{const x=gl.createShader(t);gl.shaderSource(x,s);gl.compileShader(x);return gl.getShaderParameter(x,gl.COMPILE_STATUS)?x:null};
+const v=mk(gl.VERTEX_SHADER,VS),f=mk(gl.FRAGMENT_SHADER,FS);if(!v||!f)return null;const pr=gl.createProgram();gl.attachShader(pr,v);gl.attachShader(pr,f);gl.linkProgram(pr);if(!gl.getProgramParameter(pr,gl.LINK_STATUS))return null;gl.useProgram(pr);
+gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);const l=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,2,gl.FLOAT,false,0,0);
+const U=n=>gl.getUniformLocation(pr,n);let e=o.e,w=2,h=2,vis=1,t0=performance.now();
+function rs(){const q=Math.min(devicePixelRatio||1,1.5)*(innerWidth<700?.55:.8),b=cv.getBoundingClientRect();w=cv.width=Math.max(2,b.width*q|0);h=cv.height=Math.max(2,b.height*q|0);gl.viewport(0,0,w,h)}
+function fr(){gl.uniform2f(U('R'),w,h);gl.uniform1f(U('T'),RM?20:(performance.now()-t0)/1000);gl.uniform1f(U('E'),e);gl.uniform1f(U('Z'),o.z);gl.drawArrays(gl.TRIANGLES,0,3)}
+function loop(){if(vis)fr();if(!RM)requestAnimationFrame(loop)}
+new IntersectionObserver(a=>vis=a[0].isIntersecting).observe(cv);
+if(o.drag){let dg=0;cv.onpointerdown=x=>{dg=1;cv.setPointerCapture(x.pointerId)};cv.onpointerup=()=>dg=0;cv.onpointermove=x=>{if(dg){e=Math.max(.04,Math.min(1.4,e+x.movementY*.008));if(RM)fr()}}}
+addEventListener('resize',()=>{rs();if(RM)fr()});rs();loop();return{hl(){}}}
+GL($('#bh'),{z:31,e:.13})||BH($('#bh'),{tilt:.22,n:3200,rf:.23,cy:.5,hero:1});
+const lab=GL($('#bh2'),{z:48,e:.2,drag:1})||BH($('#bh2'),{tilt:.28,n:1800,rf:.2,cy:.5,drag:1});
+/* ---------- Data ---------- */
+const WM=f=>'https://commons.wikimedia.org/wiki/Special:FilePath/'+f+'?width=700';
+const IM=(f,a,h,t)=>`<div class="im" style="height:${h||190}px;margin-bottom:10px;border-radius:6px"><span>Loading image…</span><img alt="${a}" data-wp="${t}" data-f="${f}"></div>`;
+const DST=['Orion_Nebula','Crab_Nebula','Crab_Pulsar','Exoplanet','Omega_Centauri','Dark_matter','Dark_energy','Cosmic_microwave_background','Bullet_Cluster','Carina_Nebula'],PLT=['Mercury_(planet)','Venus','Earth','Mars','Jupiter','Saturn','Uranus','Neptune'],GT=['Andromeda_Galaxy','Whirlpool_Galaxy','NGC_1300','Messier_87','Sombrero_Galaxy','Large_Magellanic_Cloud','Antennae_Galaxies','3C_273'];
+const okI=u=>new Promise(z=>{const x=new Image();x.onload=()=>z(1);x.onerror=()=>z(0);x.src=u});
+async function hy(im){const sp=im.previousElementSibling,c=[];try{const j=await(await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+im.dataset.wp)).json(),u=j.thumbnail&&j.thumbnail.source;if(u)c.push(u.replace(/\/\d+px-/,'/900px-'),u)}catch(x){}c.push(WM(im.dataset.f));
+for(const u of c)if(await okI(u)){im.src=u;sp&&sp.remove();return}if(sp)sp.textContent='Image unavailable — see images.nasa.gov / esahubble.org'}
+const hyd=root=>root.querySelectorAll('img[data-wp]').forEach(hy);
+const DSI=['Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg','Crab_Nebula.jpg','Crab_Nebula.jpg','Artist_impression_of_exoplanet_(ESO).jpg','Omega_Centauri_by_ESO.jpg','Dark_matter_halo.jpg','Hubble_ultra_deep_field.jpg','PIA16874-Planck-CMB.jpg','1E_0657-56.jpg','Webb\'s_Cosmic_Cliffs,_Mid-Infrared_(MIRI_Image).jpg'];
+const PLI=['Mercury_in_true_color.jpg','Venus-real_color.jpg','The_Blue_Marble_(remastered).jpg','OSIRIS_Mars_true_color.jpg','Jupiter_and_its_shrunken_Great_Red_Spot.jpg','Saturn_during_Equinox.jpg','Uranus2.jpg','Neptune_Full.jpg'];
+const GAL=[
+['Spiral galaxies','Andromeda Galaxy (M31)','SA(s)b · ~2.5 million ly','Andromeda_Galaxy_(with_h-alpha).jpg','NASA/ESA/Hubble','The nearest large galaxy, holding about a trillion stars. It is heading toward the Milky Way and will merge with it in roughly 4–5 billion years.'],
+['Spiral galaxies','Whirlpool Galaxy (M51)','Sbc · ~23 million ly','Messier51_sRGB.jpg','NASA/ESA/Hubble','M51 has a well-defined grand-design spiral pattern, sustained in part by its companion NGC 5195.'],
+['Barred spiral','Milky Way-like: NGC 1300','SBbc · ~61 million ly','NGC_1300_Hubble.jpg','NASA/ESA/Hubble','A central bar of stars funnels gas toward the core. Our own Milky Way is also barred.'],
+['Elliptical','Messier 87','E0–E1 · ~53 million ly','Messier_87_Hubble_WFPC2_Color.jpg','NASA/ESA/Hubble','M87 hosts a supermassive black hole of roughly 6.5 billion solar masses, imaged by the Event Horizon Telescope in 2019.'],
+['Lenticular','Sombrero Galaxy (M104)','SA(s)a · ~28 million ly','M104_ngc4594_sombrero_galaxy_hi-res.jpg','NASA/ESA/Hubble','A bright bulge and a prominent dust lane; often classed as a spiral or lenticular transition type.'],
+['Irregular','Large Magellanic Cloud','Irregular (Magellanic) · ~160,000 ly','Large_Magellanic_Cloud_-_Hubble.jpg','Wikimedia / ESO','A satellite of the Milky Way with no clear spiral structure; home of the Tarantula Nebula.'],
+['Interacting','Antennae Galaxies','NGC 4038/4039 · ~45 million ly','Antennae_galaxies_xl.jpg','NASA/ESA/Hubble','Two galaxies in collision, triggering bursts of star formation across both.'],
+['Active nuclei & quasars','Quasar 3C 273','Quasar · ~2.4 billion ly','3C_273.jpg','NASA/ESA/Hubble','The first quasar identified (1963). Its jet and central engine outshine its host galaxy.']];
+const gg=$('#gg');GAL.forEach((g,gi)=>{const d=document.createElement('div');d.className='card';
+ d.innerHTML=`${IM(g[3],g[1],200,GT[gi])}<div class="b"><small class="k" style="font-size:10px">${g[0]}</small><h3>${g[1]}</h3><small>${g[2]}</small><div class="more">${g[5]}<br><small>Credit: ${g[4]} via Wikimedia Commons</small></div><button>DISCOVER MORE</button></div>`;
+ ;hyd(d);
+ d.querySelector('button').onclick=e=>{d.classList.toggle('open');e.target.textContent=d.classList.contains('open')?'SHOW LESS':'DISCOVER MORE'};gg.append(d)});
+const CH=[['Event horizon',1,'The boundary beyond which not even light can escape. Its radius (Schwarzschild) is 2GM/c², about 3 km per solar mass.'],['Accretion disk',2,'Gas spiralling in heats to millions of degrees by friction, glowing in X-rays. One side looks brighter due to relativistic Doppler beaming.'],['Photon ring',3,'Light that orbits the hole before escaping; it forms a thin bright ring ~2.6× the horizon radius as seen from afar.'],['Gravitational lensing',4,'Gravity bends light, so the far side of the disk appears arched over and under the hole.'],['Black hole types',0,'Stellar-mass holes (~3–100 Msun) form from collapsed stars; supermassive ones (millions–billions Msun) sit in galaxy centres, e.g. Sagittarius A* (~4.3 million Msun).'],['Time dilation',0,'Clocks near a black hole tick slower relative to distant observers; at the horizon, as seen from outside, time appears to stop.'],['Gravitational waves',0,'Merging black holes ripple spacetime. LIGO first detected them in 2015 (GW150914).']];
+$('#chips').innerHTML=CH.map((c,i)=>`<button data-i="${i}">${c[0]}</button>`).join('');
+function pick(i){lab.hl(CH[i][1]);$('#bhinfo').innerHTML=`<h3>${CH[i][0]}</h3><p>${CH[i][2]}</p>`;document.querySelectorAll('#chips button').forEach((b,j)=>b.classList.toggle('on',i==j))}
+$('#chips').onclick=e=>{if(e.target.dataset.i)pick(+e.target.dataset.i)};pick(0);
+const DS=[['Nebulae & stellar nurseries','Orion Nebula (M42), ~1,344 ly: a nearby region where stars form today.','Hubble'],['Supernova remnants','Crab Nebula (M1): debris of a star seen exploding in 1054 CE.','Hubble'],['Neutron stars & pulsars','Crab Pulsar spins ~30 times a second; neutron stars pack ~1.4 Msun into ~20 km.','Chandra'],['Exoplanets','Over 6,000 confirmed. Webb studies their atmospheres by transit spectroscopy.','JWST'],['Star clusters','Globular cluster Omega Centauri holds roughly 10 million stars, ~17,000 ly away.','Hubble'],['Dark matter','About 27% of the universe’s energy content; revealed by rotation curves and lensing.','Observation'],['Dark energy','About 68%; drives the accelerating expansion discovered in 1998 via supernovae.','Observation'],['Cosmic microwave background','Relic light from ~380,000 years after the Big Bang, at 2.725 K.','Planck'],['Galaxy clusters','Bullet Cluster: lensing maps show mass offset from hot gas, evidence for dark matter.','Chandra/Hubble'],['JWST discoveries','Galaxies seen within ~300–500 million years of the Big Bang, and the Cosmic Cliffs of Carina.','JWST']];
+$('#dg').innerHTML=DS.map((d,i)=>`<div class="card">${IM(DSI[i],d[0],200,DST[i])}<div class="b"><small class="k" style="font-size:10px">${d[2]}</small><h3>${d[0]}</h3><p style="color:var(--mu);margin:6px 0 0">${d[1]}</p></div></div>`).join('');
+/* planets: radius km, mass kg, au, period days, moons */
+const PL=[['Mercury',2440,3.30e23,.39,88,0],['Venus',6052,4.87e24,.72,225,0],['Earth',6371,5.97e24,1,365.25,1],['Mars',3390,6.42e23,1.52,687,2],['Jupiter',69911,1.90e27,5.2,4333,95],['Saturn',58232,5.68e26,9.58,10759,274],['Uranus',25362,8.68e25,19.2,30687,28],['Neptune',24622,1.02e26,30.05,60190,16]];
+const G=6.674e-11,fmt=n=>n>=1e5||n<.01?n.toExponential(2):(+n.toPrecision(4)).toLocaleString();
+const bodies=[...PL.map(p=>({n:p[0],m:p[2],r:p[1]*1e3})),{n:'Moon',m:7.35e22,r:1.737e6},{n:'Sun',m:1.989e30,r:6.957e8},{n:'Neutron star (1.4 Msun, 10 km)',m:1.4*1.989e30,r:1e4}];
+$('#pl').innerHTML=PL.map((p,i)=>`<button data-i="${i}">${p[0]}</button>`).join('');
+function pp(i){const p=PL[i];$('#pinfo').innerHTML=IM(PLI[i],p[0],260,PLT[i])+`<h3>${p[0]}</h3>Radius: ${fmt(p[1])} km<br>Mass: ${p[2].toExponential(2)} kg<br>Surface gravity: ${(G*p[2]/(p[1]*1e3)**2).toFixed(2)} m/s²<br>Orbit: ${p[3]} AU, period ${fmt(p[4])} days<br>Known moons: ${p[5]}`;document.querySelectorAll('#pl button').forEach((b,j)=>b.classList.toggle('on',i==j));hyd($('#pinfo'))}
+$('#pl').onclick=e=>{if(e.target.dataset.i)pp(+e.target.dataset.i)};pp(2);
+$('#gb').innerHTML=bodies.map((b,i)=>`<option value="${i}">${b.n}</option>`).join('');$('#gb').value=2;
+function gc(){const b=bodies[$('#gb').value],g=G*b.m/b.r**2,v=Math.sqrt(2*G*b.m/b.r);$('#gout').innerHTML=`Surface gravity: <b>${fmt(g)} m/s²</b> (${fmt(g/9.81)} g)<br>Escape velocity: <b>${fmt(v/1e3)} km/s</b> (${(v/2.998e8*100).toFixed(2)}% of c)`}
+$('#gb').onchange=gc;gc();
+function lc(){const y=+$('#ly').value||0;$('#lyo').innerHTML=`${fmt(y)} ly = ${fmt(y*9.461e12)} km = ${fmt(y*63241)} AU<br>Voyager 1 (~17 km/s) would need ${fmt(y*9.461e12/17/3.156e7)} years.<br>A jet at 900 km/h: ${fmt(y*9.461e12/900/8766)} years.`}
+$('#ly').oninput=lc;lc();
+const DI=[['Earth–Moon',384400/9.461e12],['Earth–Sun (1 AU)',1/63241],['Neptune',30/63241],['Nearest star (Proxima)',4.24],['Orion Nebula',1344],['Galactic centre',26000],['Andromeda',2.5e6],['Virgo Cluster',5.4e7],['Observable universe radius',4.65e10]];
+$('#dist').innerHTML=DI.map(d=>{const w=Math.max(2,(Math.log10(d[1])+8)/19*100);return`${d[0]}: ${fmt(d[1])} ly<div class="bar" style="width:${w}%"></div>`}).join('');
+const TL=[['Nebula','Cloud of gas and dust collapses under gravity.'],['Protostar','Core heats up; fusion not yet ignited. ~100,000 years.'],['Main sequence','Hydrogen fusion. The Sun spends ~10 billion years here.'],['Red giant','Core hydrogen exhausted; the star swells. Our Sun reaches this in ~5 billion years.'],['Planetary nebula / supernova','Low-mass stars shed their shells; massive stars explode as supernovae.'],['White dwarf, neutron star or black hole','The remnant depends on the star’s initial mass.']];
+$('#tl').innerHTML=TL.map((t,i)=>`<button data-i="${i}">${i+1}. ${t[0]}</button>`).join('');
+$('#tl').onclick=e=>{const i=e.target.dataset.i;if(i==null)return;$('#tli').innerHTML=`<h3>${TL[i][0]}</h3>${TL[i][1]}`;document.querySelectorAll('#tl button').forEach((b,j)=>b.classList.toggle('on',+i==j))};$('#tl button').click();
+const OBJ=[...GAL.map(g=>[g[1],g[0]+' — '+g[5]]),...DS.map(d=>[d[0],d[1]]),['Sagittarius A*','Supermassive black hole at the Milky Way’s centre.'],['Proxima Centauri','Nearest known star, 4.24 ly away, with a planet in its habitable zone.'],['Vela Pulsar','Neutron star spinning ~11 times per second.'],...PL.map(p=>[p[0],'Planet at '+p[3]+' AU from the Sun.'])];
+function sr(){const q=$('#q').value.toLowerCase().trim(),r=OBJ.filter(o=>!q||(o[0]+o[1]).toLowerCase().includes(q));$('#sr').innerHTML=r.length?r.map(o=>`<div class="card"><div class="b"><h3>${o[0]}</h3><small>${o[1]}</small></div></div>`).join(''):'<p>No matches.</p>'}
+$('#q').oninput=sr;sr();hyd($('#dg'));
+const QZ=[['What lies at the boundary of a black hole beyond which light cannot escape?',['Photon ring','Event horizon','Accretion disk'],1,'The event horizon is the point of no return; the photon ring is light orbiting just outside it.'],['Which galaxy is the nearest large spiral to the Milky Way?',['Andromeda','Whirlpool','Sombrero'],0,'Andromeda is about 2.5 million light-years away.'],['What fraction of the universe’s energy is dark energy?',['~5%','~27%','~68%'],2,'Dark energy ≈68%, dark matter ≈27%, ordinary matter ≈5%.'],['What does a light-year measure?',['Time','Distance','Brightness'],1,'It is the distance light travels in a year: ~9.46 trillion km.'],['Which telescope imaged the Cosmic Cliffs in Carina?',['Hubble','Chandra','James Webb'],2,'JWST’s first full-colour images (2022) included the Cosmic Cliffs.']];
+let qi=0,sc=0;function qr(){const q=QZ[qi];if(!q){$('#qz').innerHTML=`<h3>Score: ${sc}/${QZ.length}</h3><button id="rs">RESTART</button>`;$('#rs').onclick=()=>{qi=sc=0;qr()};return}
+ $('#qz').innerHTML=`<small>Question ${qi+1}/${QZ.length}</small><h3>${q[0]}</h3>`+q[1].map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join('')+'<div id="ex"></div>';
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if($('#ex').innerHTML)return;const i=+b.dataset.i;if(i==q[2])sc++;document.querySelectorAll('.opt').forEach((x,j)=>x.classList.add(j==q[2]?'ok':j==i?'no':'x'));$('#ex').innerHTML=`<p>${q[3]}</p><button id="nx">${qi+1<QZ.length?'NEXT':'SEE SCORE'}</button>`;$('#nx').onclick=()=>{qi++;qr()}})}
+qr();
+</script></body></html>
